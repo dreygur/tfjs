@@ -1,23 +1,26 @@
 ﻿<html>
 <head>
   <meta name="viewport" content="width=600">
-  <link rel="stylesheet" type="text/css" href="assets/css/index.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/carbon-components.min.css">
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" type="text/css" href="carbon-components.min.css">
   <title>Realtime Object Detection on Browser by Binary 13</title>
 </head>
 <body>
   <div class="bx--grid container">
     <div class="bx--row">
-      <h1>Realtime Object Detection on Browser by Binary 13</h1>
+      <h1>Real-time Object Detection</h1>
+    </div>
+    <div class="bx--row page-header">
+      <h3>With Tensorflow.js and Tiny YOLO</h3>
     </div>
   </div>
   <div class="wrapper">
     <div class="logo-wrapper">
     </div>
     <div id="loading-message">
-      Loading the App (This may take some time, 40MegaByte)...
+      Loading Skynet (This may take a minute, 40mb)...
       <div>
-        <img class="spin"  width="100px" src="assets/img/logo.png">
+        <img class="spin"  width="100px" src="assets/logo.png">
       </div>
     </div>
     <div id="error-message" style="display:none">
@@ -41,10 +44,10 @@
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.9.0"> </script> 
-  <script src="assets/js/class_names.js"></script>
-  <script src="assets/js/postprocess.js"></script>
-  <script src="assets/js/webcam.js"></script>
-  <script src="assets/js/yolo.js"></script>
-  <script src="assets/js/index.js"></script>
+  <script src="class_names.js"></script>
+  <script src="postprocess.js"></script>
+  <script src="webcam.js"></script>
+  <script src="yolo.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
