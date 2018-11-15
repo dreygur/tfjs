@@ -44,7 +44,7 @@ async function run() {
 
       drawRect(left, top, right-left, bottom-top, `${className} Confidence: ${Math.round(classProb * 100)}%`)
 
-     document.getElementById('myDiv01').innerHTML += className + ' at:'+Math.round(classProb * 100) +'%<br>'   // add text to webpage
+     //document.getElementById('myDiv01').innerHTML += className + ' at:'+Math.round(classProb * 100) +'%<br>'   // add text to webpage
 
     });
 
@@ -85,7 +85,7 @@ function clearRects() {
      }
    } else {
       myFirst = true
-      document.getElementById('myDivOld').innerHTML = 'was '+document.getElementById('myDiv01').innerHTML  // keep
+      //document.getElementById('myDivOld').innerHTML = 'was '+document.getElementById('myDiv01').innerHTML  // keep
       document.getElementById('myDiv01').innerHTML = ''   
   }                                                 // delete old comment
 
