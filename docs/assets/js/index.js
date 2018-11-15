@@ -3,8 +3,7 @@
 
 //import { Webcam } from './webcam';
 
-
-myFirst = true
+myFirst = true;
 
 let model;
 const webcam = new Webcam(document.getElementById('webcam'));
@@ -13,9 +12,7 @@ const webcam = new Webcam(document.getElementById('webcam'));
   try {
     //ga(); causing issues
     model = await downloadModel();
-
     await webcam.setup();
-
     doneLoading();
     run();
   } catch(e) {
@@ -27,29 +24,18 @@ const webcam = new Webcam(document.getElementById('webcam'));
 async function run() {
   while (true) {
     clearRects();
-
     const inputImage = webcam.capture();
-
     //const t0 = performance.now();
-
     const boxes = await yolo(inputImage, model);
-
     //const t1 = performance.now();
-   // console.log("YOLO inference took " + (t1 - t0) + " milliseconds.");
-
+    console.log("YOLO inference took " + (t1 - t0) + " milliseconds.");
     boxes.forEach(box => {
       const {
         top, left, bottom, right, classProb, className,
       } = box;
-
       drawRect(left, top, right-left, bottom-top, `${className} Confidence: ${Math.round(classProb * 100)}%`)
-
-     document.getElementById('myDiv01').innerHTML += className + ' at:'+Math.round(classProb * 100) +'%<br>'   // add text to webpage
-
+      document.getElementById('myDiv01').innerHTML += className + ' at:'+Math.round(classProb * 100) +'%<br>'   // add text to webpage
     });
-
-  
-
     await tf.nextFrame();
   }
 }
@@ -71,9 +57,6 @@ function drawRect(x, y, w, h, text = '', color = 'red') {
  // document.getElementById('myDiv01').innerHTML += text+'<br>'   // add text to webpage
 }
 
-
-
-
 function clearRects() {
   if (document.getElementById('myDiv01').innerHTML == ''){
       if (myFirst){ 
@@ -81,14 +64,12 @@ function clearRects() {
          myFirst = false 
       } else {
          document.getElementById('myDivOld').innerHTML += '.'
-
      }
    } else {
       myFirst = true
       document.getElementById('myDivOld').innerHTML = 'was '+document.getElementById('myDiv01').innerHTML  // keep
       document.getElementById('myDiv01').innerHTML = ''   
-  }                                                 // delete old comment
-
+  }
   const rects = document.getElementsByClassName('rect');
   while(rects[0]) {
     rects[0].parentNode.removeChild(rects[0]);
