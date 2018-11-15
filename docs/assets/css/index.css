@@ -19,8 +19,8 @@ html, body {
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   margin: 0 auto;
-  width: 416px;
-  height: 416px;
+  width: 600px;
+  height: 600px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -84,6 +84,7 @@ html, body {
 .page-header {
   background-color: #f5f7fa;
   border-bottom: 1px solid #3057D5;
+  text-align: center;
 }
 
 .container {
