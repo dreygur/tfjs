@@ -1,0 +1,50 @@
+﻿<html>
+<head>
+  <meta name="viewport" content="width=600">
+  <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <title>Realtime Object Detection on Browser</title>
+</head>
+<body>
+  <div class="">
+    <div class="">
+      <h1>Realtime Object Detection on Browser<br/>-by Binary 13</h1>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="logo-wrapper">
+    </div>
+    <div id="loading-message">
+      Loading App (This may take some time)...
+      <div>
+        <span class="spin loading fas fa-basketball-ball"></span>
+        <!--<img class="spin"  width="100px" src="assets/img/logo.png">-->
+      </div>
+    </div>
+    <div id="error-message" style="display:none">
+      Sorry! An error occured while loading the model 😢
+      <br>
+      If you're on an iPhone, please try using Safari.
+    </div>
+    <div id="success-message" style="display:none">
+      Point me at something, but keep in mind I am a little bit slow 😢
+    </div>
+    <div class="webcam-ui-container">
+      <div id="webcam-wrapper" style="display: none">
+        <video autoplay playsinline muted
+          id="webcam" width="416" height="416">
+        </video>
+      </div>
+    </div>
+    <div id="myDiv01" style="text-align: center; margin: 25px 0"></div>
+    <div id="myDivOld" style="text-align: center; margin: 25px 0"></div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.9.0"> </script> 
+  <script src="assets/js/class_names.js"></script>
+  <script src="assets/js/postprocess.js"></script>
+  <script src="assets/js/webcam.js"></script>
+  <script src="assets/js/yolo.js"></script>
+  <script src="assets/js/index.js"></script>
+</body>
+</html>
